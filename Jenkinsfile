@@ -9,8 +9,8 @@ pipeline {
                    
                 }
                 timeout(time: 3, unit: 'MINUTES') {
-                   sh 'chmod +x t_out.sh'
-                    sh './t_out.sh'
+                   sh 'chmod +x tout.sh'
+                    sh './tout.sh'
                 }
 
                 
