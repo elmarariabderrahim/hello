@@ -8,7 +8,7 @@ pipeline {
                     sh './helllo.sh'
                    
                 }
-                timeout(time: 3, unit: 'MINUTES') {
+                timeout(time: 3, unit: 'SECONDS') {
                     sh'sleep 2m'
                    sh 'chmod +x tout.sh'
                     sh './tout.sh'
