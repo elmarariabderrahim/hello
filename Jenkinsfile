@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Test') {
             steps {
-                sh 'echo "Fail!"; exit 1'
+                sh 'chmod +x ./helllo.sh; helllo.sh'
             }
         }
     }
