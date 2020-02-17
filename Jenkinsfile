@@ -4,7 +4,7 @@ pipeline {
         stage('Test') {
             steps {
                 sh 'chmod +x ./helllo.sh'
-                sh 'helllo.sh'
+                sh './helllo.sh'
             }
         }
     }
