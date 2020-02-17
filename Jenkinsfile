@@ -3,7 +3,8 @@ pipeline {
     stages {
         stage('Test') {
             steps {
-                sh 'chmod +x ./helllo.sh; helllo.sh'
+                sh 'chmod +x ./helllo.sh'
+                sh 'helllo.sh'
             }
         }
     }
