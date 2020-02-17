@@ -9,6 +9,7 @@ pipeline {
                    
                 }
                 timeout(time: 3, unit: 'MINUTES') {
+                    sh'sleep 2m'
                    sh 'chmod +x tout.sh'
                     sh './tout.sh'
                 }
