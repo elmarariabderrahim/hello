@@ -7,9 +7,7 @@ pipeline {
                     sh './helllo.sh'
                 }
 
-                timeout(time: 1, unit: 'MINUTES') {
-                    sh './health-check.sh'
-                }
+                
             }
         }
     }
