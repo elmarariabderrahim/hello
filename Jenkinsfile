@@ -6,10 +6,11 @@ pipeline {
                 echo 'Hello World ********* '
             }
         }
-        stage('Example Deploy') {
-            when {
+         when {
                 not { branch 'ppp'}
             }
+        stage('Example Deploy') {
+           
             steps {
                 echo 'Deploying'
             }
