@@ -7,8 +7,8 @@ pipeline {
             }
         }
         stage('Example Deploy') {
-            when not{
-                branch 'ppp'
+            when {
+               not branch 'ppp'
             }
             steps {
                 echo 'Deploying'
