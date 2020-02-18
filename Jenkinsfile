@@ -3,14 +3,16 @@ pipeline {
     stages {
         stage('Example Build') {
             steps {
-                echo 'Hello World ********* '
+                echo 'Hello World'
             }
         }
-         when {
-                not { branch 'ppp'}
-            }
         stage('Example Deploy') {
-           
+            when {
+                allOf {
+                    branch 'production'
+                    environment name: 'DEPLOY_TO', value: 'production'
+                }
+            }
             steps {
                 echo 'Deploying'
             }
