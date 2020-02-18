@@ -8,7 +8,7 @@ pipeline {
         }
         stage('Example Deploy') {
             when {
-                branch 'master'
+              not  branch 'ppp'
             }
             steps {
                 echo 'Deploying'
