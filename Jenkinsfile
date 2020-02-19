@@ -1,22 +1,14 @@
 pipeline {
-    agent any
-    stages {
-        stage('Example Build') {
-            steps {
-                echo 'Hello World'
-            }
+    agent {
+        docker {
+            image 'maven:3-alpine' 
+            args '-v /root/.m2:/root/.m2' 
         }
-        stage('Example Deploy') {
-            when {
-               
-                anyOf {
-                    environment name: 'DEPLOY_TO', value: 'production'
-                    environment name: 'DEPLOY_TO', value: 'staging'
-                     branch 'master'
-                }
-            }
+    }
+    stages {
+        stage('Build') { 
             steps {
-                echo 'Deploying'
+                sh 'mvn -B -DskipTests clean package' 
             }
         }
     }
